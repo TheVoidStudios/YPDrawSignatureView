@@ -142,7 +142,7 @@ public class YPDrawSignatureView: UIView {
     public func getSignatureCropped(scale scale:CGFloat = 1) -> UIImage? {
         guard let fullRender = getSignature(scale:scale) else { return nil }
         let bounds = scaleRect(path.bounds.insetBy(dx: -strokeWidth/2, dy: -strokeWidth/2), byFactor: scale)
-        guard let imageRef = CGImageCreateWithImageInRect(fullRender.CGImage, bounds) else { return nil }
+        guard let imageRef = CGImageCreateWithImageInRect(fullRender.CGImage!, bounds) else { return nil }
         return UIImage(CGImage: imageRef)
     }
     
